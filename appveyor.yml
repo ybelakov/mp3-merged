@@ -1,0 +1,21 @@
+version: 1.0.{build}
+
+build:
+  project: audio
+
+environment:
+  matrix:
+    - PYTHON: "C:\\Python39"
+      PYTHON_VERSION: "3.9"
+
+install:
+  - "set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  - "python -m pip install --upgrade pip"
+  - "pip install pyinstaller"
+
+build_script:
+  - "pyinstaller --onefile audio.py"
+
+artifacts:
+  - path: dist\\audio.exe
+    name: executable
