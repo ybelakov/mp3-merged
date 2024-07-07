@@ -19,7 +19,9 @@ build_script:
 test_script:
   - "dir dist"
   - "dir build\\audio"
+  - "echo %CD%"
+  - "echo %PATH%"
 
 artifacts:
-  - path: dist\\audio.exe
+  - path: "dist\\audio.exe"
     name: executable
