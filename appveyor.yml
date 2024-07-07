@@ -14,7 +14,7 @@ install:
   - "pip install pyinstaller"
 
 build_script:
-  - "pyinstaller --onefile audio.py"
+  - "pyinstaller --onefile --add-binary 'C:\\Windows\\System32\\*.dll;.' audio.py"
 
 test_script:
   - "dir dist"
