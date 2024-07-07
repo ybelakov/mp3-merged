@@ -1,7 +1,7 @@
 version: 1.0.{build}
 
 build:
-  project: audio
+  project: audio_arranger
 
 environment:
   matrix:
@@ -15,6 +15,10 @@ install:
 
 build_script:
   - "pyinstaller --onefile audio.py"
+
+test_script:
+  - "dir dist"
+  - "dir build\\audio"
 
 artifacts:
   - path: dist\\audio.exe
